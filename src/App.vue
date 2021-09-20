@@ -1,18 +1,18 @@
 <template>
-  <FolderView name="$" :folders="folders" :files="files" />
+  <FolderView name="/" :folders="folders" :files="files" />
 </template>
 
 <script>
-import FolderView from './components/FolderView.vue'
-import data from './data/list';
+import FolderView from "./components/FolderView.vue";
+import data from "./data/list";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    FolderView
+    FolderView,
   },
-  data: () => data
-}
+  data: () => data,
+};
 </script>
 
 <style lang="scss">

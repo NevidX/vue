@@ -1,15 +1,22 @@
+
 <template>
-  <p class="folder">{{ name }}</p>
-  <template v-for="folder in folders">
-    <FolderView
-      :name="folder.name"
-      :folders="folder.folders"
-      :files="folder.files"
-    />
-  </template>
-  <template v-for="file in files">
-    <FileView :name="file.name" />
-  </template>
+  <div class="wrapper">
+    <div :style="{ 'margin-left': `${depth * 20}px` }" class="folder">
+      <span><img src="../img/icons/folder1.svg" alt="folder" /></span>{{ name }}
+    </div>
+    <template v-for="folder in folders">
+      <!-- eslint-disable-next-line -->
+      <FolderView
+        :name="folder.name"
+        :folders="folder.folders"
+        :files="folder.files"
+      />
+    </template>
+    <template v-for="file in files">
+      <!-- eslint-disable-next-line -->
+      <FileView :name="file.name" />
+    </template>
+  </div>
 </template>
 
 <script>
@@ -27,7 +34,23 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-.folder {
-  color: orangered;
+.wrapper {
+  width: 400px;
+  height: auto;
+  margin: 0 auto;
+  .folder {
+    font-weight: bold;
+    position: relative;
+    color: red;
+    font-size: 20px;
+    margin-bottom: 60px;
+    span {
+      display: block;
+      position: absolute;
+      top: -15px;
+      left: -50px;
+      transform: scale(0.5);
+    }
+  }
 }
 </style>
