@@ -4,7 +4,7 @@ export default {
     folders: [
       {
         name: "icons",
-        folders:[],
+        folders: [],
         files: [
           {
             name: "close.svg",
@@ -30,7 +30,7 @@ export default {
       },
       {
         name: "backgrounds",
-        folders:[],
+        folders: [],
         files: [
           {
             name: "common.jpeg",
