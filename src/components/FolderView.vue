@@ -1,8 +1,8 @@
 
 <template>
   <div class="wrapper">
-    <div :style="{ 'margin-left': `${depth * 20}px` }" class="folder">
-      <span><img src="../img/icons/folder1.svg" alt="folder" /></span>{{ name }}
+    <div :style="{ 'margin-left': `${depth * 40}px` }" class="folder">
+      <span><img src="../img/icons/folder.svg" alt="folder" /></span>{{ name }}
     </div>
     <template v-for="folder in folders">
       <!-- eslint-disable-next-line -->
@@ -10,11 +10,12 @@
         :name="folder.name"
         :folders="folder.folders"
         :files="folder.files"
+        :depth="depth + 1"
       />
     </template>
     <template v-for="file in files">
       <!-- eslint-disable-next-line -->
-      <FileView :name="file.name" />
+      <FileView :name="file.name" :file="file.files" :depth="depth + 1" />
     </template>
   </div>
 </template>
@@ -28,6 +29,10 @@ export default {
     name: String,
     folders: Array,
     files: Array,
+    depth: {
+      type: Number,
+      default: 0,
+    },
   },
 };
 </script>
@@ -35,15 +40,14 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 .wrapper {
-  width: 400px;
-  height: auto;
-  margin: 0 auto;
   .folder {
     font-weight: bold;
     position: relative;
     color: red;
+    text-align: left;
     font-size: 20px;
-    margin-bottom: 60px;
+    margin-bottom: 20px;
+    cursor: pointer;
     span {
       display: block;
       position: absolute;

@@ -4,12 +4,14 @@
 
 <script>
 import FolderView from "./components/FolderView.vue";
+import FileView from "./components/FileView.vue";
 import data from "./data/list";
 
 export default {
   name: "App",
   components: {
     FolderView,
+    FileView,
   },
   data: () => data,
 };
