@@ -6,9 +6,13 @@
       :style="{ 'margin-left': `${depth * 40}px` }"
       class="folder"
     >
-      <span class="folder-icon"
-        ><img src="../img/icons/folder.svg" alt="folder" /></span
-      >{{ name }}
+      <span v-if="opened" class="folder-icon"
+        ><img src="../img/icons/folder.svg" alt="folder"
+      /></span>
+      <span v-else class="closed-folder-icon">
+        <img src="../img/icons/ClosedFolder.svg" alt="folder" />
+      </span>
+      {{ name }}
     </div>
     <template v-for="folder in folders">
       <!-- eslint-disable-next-line -->
@@ -75,7 +79,8 @@ export default {
     &:hover {
       background-color: rgba(17, 118, 233, 0.336);
     }
-    .folder-icon {
+    .folder-icon,
+    .closed-folder-icon {
       display: block;
       position: absolute;
       top: -15px;
