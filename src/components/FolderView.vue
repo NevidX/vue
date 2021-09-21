@@ -1,12 +1,19 @@
 
 <template>
   <div class="wrapper">
-    <div :style="{ 'margin-left': `${depth * 40}px` }" class="folder">
-      <span><img src="../img/icons/folder.svg" alt="folder" /></span>{{ name }}
+    <div
+      @click="opened = !opened"
+      :style="{ 'margin-left': `${depth * 40}px` }"
+      class="folder"
+    >
+      <span class="folder-icon"
+        ><img src="../img/icons/folder.svg" alt="folder" /></span
+      >{{ name }}
     </div>
     <template v-for="folder in folders">
       <!-- eslint-disable-next-line -->
       <FolderView
+        v-if="opened"
         :name="folder.name"
         :folders="folder.folders"
         :files="folder.files"
@@ -15,7 +22,12 @@
     </template>
     <template v-for="file in files">
       <!-- eslint-disable-next-line -->
-      <FileView :name="file.name" :file="file.files" :depth="depth + 1" />
+      <FileView
+        v-if="opened"
+        :name="file.name"
+        :file="file.files"
+        :depth="depth + 1"
+      />
     </template>
   </div>
 </template>
@@ -34,26 +46,41 @@ export default {
       default: 0,
     },
   },
+  data() {
+    return {
+      opened: false,
+    };
+  },
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 .wrapper {
+  width: 350px;
+  &:first-child {
+    border: 5px solid gray;
+    border-radius: 30px;
+    padding: 20px 0 0 60px;
+  }
   .folder {
     font-weight: bold;
     position: relative;
-    color: red;
+    color: rgb(122, 122, 122);
     text-align: left;
     font-size: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     cursor: pointer;
-    span {
+    transition: background 0.3s ease-in-out;
+    &:hover {
+      background-color: rgba(17, 118, 233, 0.336);
+    }
+    .folder-icon {
       display: block;
       position: absolute;
       top: -15px;
-      left: -50px;
-      transform: scale(0.5);
+      left: -45px;
+      transform: scale(0.4);
     }
   }
 }

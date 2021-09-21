@@ -1,5 +1,5 @@
 <template>
-  <FolderView name="/" :folders="folders" :files="files" />
+  <FolderView name="Folders" :folders="folders" :files="files" />
 </template>
 
 <script>

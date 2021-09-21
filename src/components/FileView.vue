@@ -1,6 +1,10 @@
 <template>
   <div>
-    <div :style="{ 'margin-left': `${depth * 30}px` }" class="file">
+    <div
+      @click="opened = !opened"
+      :style="{ 'margin-left': `${depth * 30}px` }"
+      class="file"
+    >
       <span>
         <img src="../img/icons/file.svg" alt="file" />
       </span>
@@ -20,6 +24,11 @@ export default {
       default: 0,
     },
   },
+  data() {
+    return {
+      opened: false,
+    };
+  },
 };
 </script>
 
@@ -30,6 +39,10 @@ export default {
   line-height: 150%;
   margin-bottom: 8px;
   cursor: pointer;
+  transition: background 0.3s ease-in-out;
+  &:hover {
+    background-color: rgba(17, 118, 233, 0.336);
+  }
   span {
     display: block;
     position: absolute;
