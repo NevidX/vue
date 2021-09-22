@@ -112,7 +112,7 @@ body {
     width: 400px;
     height: 100%;
     background-color: rgba(235, 235, 235, 0.63);
-    overflow: hidden;
+    overflow: auto;
     border-radius: 5px 0px 0px 5px;
     .tools-panel__buttons {
       display: none;
