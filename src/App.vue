@@ -11,7 +11,7 @@
         <div class="btn btn__left">&larr;</div>
         <div class="btn btn__right">&rarr;</div>
         <div class="btn btn__search">
-          <img src="./img/icons/search1.svg" alt="search" />
+          <img src="./img/icons/search.svg" alt="search" />
         </div>
         <div class="btn btn__document">
           <img src="./img/icons/document.svg" alt="document" />
