@@ -34,19 +34,20 @@ export default {
 
 <style scoped lang="scss">
 .file {
+  display: flex;
   position: relative;
-  color: green;
+  color: rgb(46, 46, 46);
+  width: 300px;
   line-height: 150%;
   margin-bottom: 8px;
   cursor: pointer;
-  transition: background 0.3s ease-in-out;
+  transition: all 0.1s ease-in-out;
   &:hover {
     background-color: rgba(17, 118, 233, 0.336);
+    border-left: 3px solid rgba(17, 118, 233, 0.336);
   }
   span {
     display: block;
-    position: absolute;
-    left: -25px;
   }
 }
 </style>

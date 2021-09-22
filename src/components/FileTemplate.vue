@@ -94,4 +94,31 @@ export default {
     }
   }
 }
+.working-section__file-view {
+  .folder {
+    display: flex;
+    width: 100%;
+    font-weight: bold;
+    position: relative;
+    color: rgb(73, 73, 73);
+    text-align: left;
+    align-items: center;
+    font-size: 20px;
+    padding-left: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    border-bottom: 1px solid gray;
+    border-radius: 100px;
+    user-select: none;
+    &:hover {
+      background-color: rgba(17, 118, 233, 0.336);
+      border-left: 3px solid rgba(17, 118, 233, 0.336);
+    }
+    .folder-icon,
+    .closed-folder-icon {
+      margin-right: 5px;
+      display: block;
+    }
+  }
+}
 </style>

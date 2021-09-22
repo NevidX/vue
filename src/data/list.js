@@ -4,7 +4,19 @@ export default {
     folders: [
       {
         name: "icons",
-        folders: [],
+        folders: [
+          {
+            name: "images",
+            folders: [],
+            files: [
+              {
+                name: "close.svg",
+                type: "image/svg",
+                length: "1024"
+              },
+            ]
+          }
+        ],
         files: [
           {
             name: "close.svg",
