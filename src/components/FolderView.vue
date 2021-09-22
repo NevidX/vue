@@ -8,10 +8,10 @@
         class="folder"
       >
         <span v-if="opened" class="folder-icon"
-          ><img src="../img/icons/folder3.svg" alt="folder"
+          ><img src="../img/icons/folder.svg" alt="folder"
         /></span>
         <span v-else class="closed-folder-icon">
-          <img src="../img/icons/ClosedFolder3.svg" alt="folder" />
+          <img src="../img/icons/ClosedFolder.svg" alt="folder" />
         </span>
         {{ name }}
       </div>
@@ -64,6 +64,8 @@ export default {
 <style scoped lang="scss">
 .wrapper {
   width: 350px;
+  max-height: 100%;
+
   .folder__wrapper {
     width: 100%;
     height: 100%;
@@ -78,6 +80,7 @@ export default {
     align-items: center;
     font-size: 20px;
     padding-left: 10px;
+    margin-bottom: 10px;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
     border-bottom: 1px solid gray;
